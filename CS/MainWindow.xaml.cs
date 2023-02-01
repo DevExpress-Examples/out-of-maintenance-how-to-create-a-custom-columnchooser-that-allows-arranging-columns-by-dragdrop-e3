@@ -64,7 +64,16 @@ namespace DXSample {
             Container.IsOpen = false;
         }
         UIElement IColumnChooser.TopContainer {
-            get { return (UIElement)Container.Content; }
+            get
+            {
+
+                if (Container != null)
+                {
+                    return (UIElement)Container.Content;
+                }
+
+                return null;
+            }
         }
 
         void IColumnChooser.SaveState(IColumnChooserState state) { }
