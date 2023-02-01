@@ -65,7 +65,11 @@ Namespace DXSample
 
         Private ReadOnly Property TopContainer As UIElement Implements IColumnChooser.TopContainer
             Get
-                Return CType(Container.Content, UIElement)
+                If Container IsNot Nothing Then
+                    Return CType(Container.Content, UIElement)
+                End If
+
+                Return Nothing
             End Get
         End Property
 
